@@ -2,11 +2,11 @@ import ConditionListItem from "../condition-list-items/condition-list-items";
 import "./conditions-list.css"
 
 
-const ConditionList = ({namesData}) => {
+const ConditionList = ({namesData,  deleteItemNext}) => {
 
 	const elem = namesData.map((item)=>{
 		const {id, ...itemProps} = item
-		return <ConditionListItem key="id" {...itemProps}></ConditionListItem>
+		return <ConditionListItem deleteItemNext={()=> deleteItemNext(id)}key="id" {...itemProps}></ConditionListItem>
 	})
 
 	return (
